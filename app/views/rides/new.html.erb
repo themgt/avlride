@@ -1,38 +1,24 @@
-<div id="main_content_wrap" class="outer">
+<div id="main_content_wrap" class="col-md-6 col-offset-6">
   <section id="main_content" class="inner">
     <%= form_for @ride do |f| %>
-      <div class="form-group">
-        <label class="control-label">From</label>
-        <input id="geocomplete" type="text" placeholder="Type in an address" value="Empire State Bldg" />
-        <input id="find" type="button" value="find" />
-      </div>
-      
-      <div class="form-group">
-        <label class="control-label">To</label>
-        <input id="geocomplete2" type="text" placeholder="Type in an address" value="Empire State Bldg" />
-        <input id="find2" type="button" value="find" />
-      </div>
+      <input id="geocomplete" type="text" placeholder="Type in an address" value="Empire State Bldg" />
+      <input id="find" type="button" value="find" />
       
       <fieldset>
-        <div class="form-group">
-          <%= f.label :has_car %>
-          <%= f.check_box :has_car %>
-        </div>
+        <h3>Address-Details</h3>
+
+        <label>Latitude</label>
+        <input name="lat" type="text" value="">
+
+        <label>Longitude</label>
+        <input name="lng" type="text" value="">
+
+        <label>Formatted Address</label>
+        <input name="formatted_address" type="text" value="">
         
-        <div class="form-group">
-          <%= f.label :leave_at %>
-          <%= f.text_field :leave_at %>
-        </div>
-        
-        <div class="form-group">
-          <%= f.label :return_at %>
-          <%= f.text_field :return_at %>
-        </div>
-        
-        <div class="form-group">
-          <%= f.label :message %>
-          <%= f.text_area :message %>
-        </div>
+        <%= f.label :has_car %>
+        <%= f.check_box :has_car %>
+
         <%= f.submit %>
       </fieldset>
     <% end %>
@@ -41,25 +27,12 @@
 
 <script>
   $(function(){
-    $("#geocomplete").geocomplete().geocomplete().bind("geocode:result", function(event, result){
-        console.log(result.formatted_address);
-        console.log(result.geometry.location.A);
-        console.log(result.geometry.location.k);
-        console.log(result);
-    });
-    
-    $("#geocomplete2").geocomplete().geocomplete().bind("geocode:result", function(event, result){
-        console.log(result.formatted_address);
-        console.log(result.geometry.location.A);
-        console.log(result.geometry.location.k);
-        console.log(result);
+    $("#geocomplete").geocomplete({
+      details: "form",
+      types: ["geocode", "establishment"]
     });
     
     $("#find").click(function(){
-      $("#geocomplete").trigger("geocode");
-    });
-    
-    $("#find2").click(function(){
       $("#geocomplete").trigger("geocode");
     });
   });

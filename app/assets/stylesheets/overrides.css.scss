@@ -1,8 +1,13 @@
 .btn{
-	color: white !important;
+	/*color: white !important;*/
 }
 
-.signup-form{
+.facebook-link{
+	float:right;
+	margin-top: 10px;
+}
+
+form{
 	input{
 		min-height: 30px;
 		border-radius: 3px;
@@ -23,9 +28,10 @@
 .logo{
 	text-align: center;
 	img{
-		max-height: 100px !important;
+		width: 100%;
+		max-width: 400px;
 		margin: auto;
-		width: auto;
+		/*width: auto;*/
 	}
 }
 
