@@ -1,0 +1,10 @@
+<div class="col-md-6 col-md-offset-3">
+	<div class="alert alert-info">
+		<%= @hood.rides.count %> rides
+	</div>
+	<ul class="rides-list list-group">
+		<% @hood.rides.each do |ride| %>
+		  <li class="list-group-item"><%= link_to ride.title, [ride.hood, ride] %></li>
+		<% end %>
+	</ul>
+</div>
