@@ -1,11 +1,84 @@
+<% @testlist = ['Albemarle Park',
+'Ballentree',
+'Bear Creek',
+'Beaverdam Run',
+'Beverly Hills',
+'Biltmore Park',
+'Biltmore South',
+'Birch Forest',
+'Blake Mountain',
+'Brucemont/Louisiana ',
+'Bull Mountain',
+'Burton Street',
+'Charlotte Street',
+'Chestnut Hills',
+'Cimarron',
+'Claxton Community',
+'Cloister Condominiums',
+'Crowfields Condominiums',
+'DARN',
+'Deaverview',
+'Deer Run',
+'Deerwood',
+'Devonshire ',
+'East End/Valley Street',
+'East View Association',
+'East West Asheville',
+'Erskine-Walton',
+'Falconhurst',
+'Five Points',
+'Grace',
+'Grove Park/Sunset',
+'Hall Fletcher',
+'Haw Creek',
+'Henrietta/Spears Street',
+'Hillcrest',
+'Historic Montford',
+'Jackson Park',
+'Kenilworth',
+'Kenilworth Forest',
+'Lakeview Park',
+'Lee Walker Heights',
+'Livingston Heights',
+'Lucerne Park',
+'Malvern Hills',
+'Morningside Park',
+'Mountainbrook',
+'Murdock/Linden',
+'North Asheville Community',
+'Norwood Park',
+'Oak Forest',
+'Oakley',
+'Park Avenue',
+'Parkway Forest',
+'Pebble Creek',
+'Pisgah View ',
+'Redwood Forest',
+'Riverview',
+'Shiloh',
+'Sondley Estates',
+'South French Broad',
+'South Oaks Townhomes',
+'Spring Forest Cr',
+'St. Dunstans',
+'The Views of Asheville',
+'Upper Malvern Hills',
+'View Point',
+'Virginia Avenue',
+'WECAN',
+'Walton-Oakland',
+'West Asheville Estates',
+'Wilshire Park'] %>
+
+
 <div class="header">
 	<div class="container">
 		<h1>
-			AVLRide
+			Join AVLRide
 		</h1>
 	</div>
 	<div class="container">
-		<form class="form signup-form">
+		<form class="form signup-form col-md-6 col-md-offset-3">
 			<p>
 				<label for="first name">First Name</label>
 				<input type="text" name="first name"/>
@@ -19,15 +92,85 @@
 				<input type="email" name="user email" />
 			</p>
 			<p>
-				<label for="last name">Home Location</label>
+				<label for="last name">Home Neighborhood</label>
 				<input type="text" name="home location" />
+				<select name='neighborhood_home'>
+					<% for n in @testlist %>
+						<option value='<%= n %>'><%= n %></option>
+					<% end
+					%>
+				</select>
 			</p>
 			<p>
-				<label for="last name">Work Location</label>
+				<label for="last name">Work Neighborhood</label>
 				<input type="text" name="work location" />
+				<select name='neighborhood_home'>
+					<% for n in @testlist %>
+						<option value='<%= n %>'><%= n %></option>
+					<% end %>
+				</select>
 			</p>
-			<p>
-				<input type="submit" class="btn btn-success"/>
+			<p class="submit-button">
+				<input type="submit" value="sign me up! &#8594;" class="btn btn-success btn-lg"/>
+			</p>
+		</form>
+	</div>				
+</div>
+
+<div class="header">
+	<div class="container">
+		<h1>
+			Tell us a bit more about yourself
+		</h1>
+	</div>
+	<div class="container">
+		<form class="form signup-form col-md-6 col-md-offset-3">
+			<div class="radio-group">
+				<span>I am a:</span>
+				<p>
+					<label for="driver">Driver</label>
+					<input type="radio" name="driver"/>
+				</p>
+				<p>
+					<label for="passenger">Passenger</label>
+					<input type="radio" name="passenger"/>
+				</p>				
+			</div>
+			<div class="radio-group">
+				<span>I am a:</span>
+				<p>
+					<label for="Male">Male</label>
+					<input type="radio" name="Male"/>
+				</p>
+				<p>
+					<label for="Female">Female</label>
+					<input type="radio" name="Female"/>
+				</p>				
+			</div>
+			<div class="radio-group">
+				<span>Do you speed?</span>
+				<p>
+					<label for="yes-speed">Yes! Like a banshee in the night</label>
+					<input type="radio" name="yes-speed"/>
+				</p>
+				<p>
+					<label for="no-speed">Heck no! I drive like my grammy</label>
+					<input type="radio" name="no-speed"/>
+				</p>				
+			</div>			
+			<div class="radio-group">
+				<span>Do you smoke?</span>
+				<p>
+					<label for="yes-speed">Yes! I love my smokables</label>
+					<input type="radio" name="yes-speed"/>
+				</p>
+				<p>
+					<label for="no-speed">Heck no! Gross</label>
+					<input type="radio" name="no-speed"/>
+				</p>				
+			</div>			
+			<p class="submit-button">
+				<input type="submit" value="next &#8594;" class="btn btn-success btn-lg"/>
 			</p>
 		</form>
 	</div>				
