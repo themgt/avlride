@@ -20,6 +20,8 @@ gem 'rails_admin', git: 'https://github.com/sferik/rails_admin.git'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'bootstrap-sass', '~> 3.1.0'
+gem 'bootstrap-datepicker-rails'
+
 gem "font-awesome-rails"
 
 # Use jquery as the JavaScript library

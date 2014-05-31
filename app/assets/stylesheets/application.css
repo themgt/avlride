@@ -2,6 +2,7 @@
  *= require_tree .
  *= require_self
  *= require bootstrap
+ *= require bootstrap-datepicker
  *= require font-awesome
  *= require overrides
  */
