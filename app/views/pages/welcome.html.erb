@@ -1,4 +1,4 @@
-<% @testlist = ['Albemarle Park',
+<% @testlist = ['', 'Albemarle Park',
 'Ballentree',
 'Bear Creek',
 'Beaverdam Run',
@@ -93,22 +93,22 @@
 			</p>
 			<p>
 				<label for="last name">Home Neighborhood</label>
-				<input type="text" name="home location" />
 				<select name='neighborhood_home'>
 					<% for n in @testlist %>
 						<option value='<%= n %>'><%= n %></option>
 					<% end
 					%>
 				</select>
+				<input type="text" name="home location" />
 			</p>
 			<p>
 				<label for="last name">Work Neighborhood</label>
-				<input type="text" name="work location" />
 				<select name='neighborhood_home'>
 					<% for n in @testlist %>
 						<option value='<%= n %>'><%= n %></option>
 					<% end %>
 				</select>
+				<input type="text" name="work location" />
 			</p>
 			<p class="submit-button">
 				<input type="submit" value="sign me up! &#8594;" class="btn btn-success btn-lg"/>
