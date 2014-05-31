@@ -11,8 +11,12 @@
 	label, input{
 		float:left;
 		clear:none !important;
-		display:inline-block;
+		display:inline;
 		margin-top: 0px !important;
+	}
+	input{
+		margin-right: 5px !important;
+		margin-top: 3px !important;
 	}
 }
 
