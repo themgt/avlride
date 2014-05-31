@@ -60,14 +60,14 @@
               <ul class="dropdown-menu">
                 <li><a href='/users/edit'>My Profile</a></li>
                 <li class="divider"></li>
-                <li><%= link_to "Sign out", signout_path, id: "sign_out" %>   </li>
+                <li><%= link_to "Sign out", destroy_user_session_path, method: 'delete', tabindex: "5" %></li>
               </ul>
             </li>
           </ul>
           <% else %>
           <div class="sign-in-buttons">
             <!-- <li> -->
-              <%= link_to "Sign in", new_session_path(resource_name) %>
+              <%= link_to "Sign in", '/users/sign_in' %>
               <span>
                 - or -
               </span>
