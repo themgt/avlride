@@ -1,1 +1,10 @@
 <%= debug @ride %>
+<div class="col-md-6 col-md-offset-3">
+	<h3>Ride Share details</h3>
+	<h4>	<%= @ride.title %></h4>
+	<h5>Leaving at: <%= @ride.leave_on %>, <%= @ride.timespan %></h5>
+	<h5>Leaving from: <%= @ride.neighborhood.name %></h5>
+	<h5>Going  to: <%= @ride.neighborhood.name %></h5>
+	<p>		<%= @ride.message %></p>
+
+</div>

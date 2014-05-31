@@ -2,10 +2,32 @@
 	/*color: white !important;*/
 }
 
+.navbar{
+	background-color: #0069BF !important;
+	border: none !important;
+	border-radius: 0px !important;
+}
+
+.navbar-default .navbar-brand {
+	color: white !important;
+	&:hover{
+		color: #ddd !important;
+		text-decoration: underline;
+	}
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: white !important;
+	&:hover{
+		color: #ddd !important;
+		text-decoration: underline;
+	}
+}
+
 .container > h2{
 	text-align: center;
 	color: #999 !important;
-	margin-top: 20px;
+	margin-top: 40px !important;
 	/*border-bottom: 1px solid #ccc;*/
 }
 
@@ -23,6 +45,7 @@
 
 .alert{
 	margin-top: 20px;
+	text-align: center;
 }
 
 .neighborhood-list, .rides-list{
