@@ -61,12 +61,11 @@
                 <li><a href="#">Separated link</a></li>
               </ul>
             </li>
-            <% else %>
-              <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-            <% end %>
-          </li>
-
+          </li>         
         </ul>
+        <% else %>
+          <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: "btn btn-large btn-primary" %>
+        <% end %>         
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
