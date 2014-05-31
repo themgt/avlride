@@ -2,6 +2,20 @@
 	/*color: white !important;*/
 }
 
+.checkbox-field{
+	display:block;
+	clear:both;
+	overflow:hidden;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	label, input{
+		float:left;
+		clear:none !important;
+		display:inline-block;
+		margin-top: 0px !important;
+	}
+}
+
 .chosen-container{
 	margin-bottom: 10px;
 	min-height: 25px;
@@ -25,7 +39,7 @@ fieldset{
 	}
 	input{
 		border-radius: 3px;
-		&[type="text"], &[type="email"]{
+		&[type="text"], &[type="email"], &[type="password"]{
 			width: 100%;
 			min-height: 40px;
 			padding: 0px 10px;

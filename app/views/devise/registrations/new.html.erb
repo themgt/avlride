@@ -26,20 +26,23 @@
 			<p>
 			  <%= f.label :home_neighborhood_id %>
 			  <%= f.select :home_neighborhood_id, User.neighborhoods %>
+<!-- 
+
+			  
 				<div class="form-group">
           <label class="control-label">Home</label>
           <input id="geocomplete" type="text" placeholder="Type in an address" value="Empire State Bldg" />
-          <input id="find" type="button" value="find" />
-        </div>
+          <input id="find" type="button" value="find" class="btn btn-default"/>
+        </div> -->
 			</p>
 			<p>
 			  <%= f.label :work_neighborhood_id %>
 			  <%= f.select :work_neighborhood_id, User.neighborhoods %>
-				<div class="form-group">
+				<!-- <div class="form-group">
           <label class="control-label">Work</label>
           <input id="geocomplete2" type="text" placeholder="Type in an address" value="Empire State Bldg" />
-          <input id="find2" type="button" value="find" />
-        </div>
+          <input id="find2" type="button" value="find" class="btn btn-default"/>
+        </div> -->
       </p>
 			<p class="submit-button">
 				<input type="submit" value="sign me up! &#8594;" class="btn btn-success btn-lg"/>
