@@ -8,7 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-default navbar-right" role="navigation">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -70,9 +70,13 @@
           </li>
         </ul>
         <% else %>
+        <div class="right-nav">
           <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: "btn btn-large btn-primary facebook-link" %>
+        </div>
         <% end %> 
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>               
+        <div class="right-nav">
+          <%= link_to "Sign out", signout_path, id: "sign_out" %>   
+        </div>            
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
