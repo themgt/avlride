@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'hashie'
 gem 'rails_admin', git: 'https://github.com/sferik/rails_admin.git'
-# gem 'devise'
+gem 'devise'
 gem 'omniauth-facebook'
 gem 'bootstrap-sass', '~> 3.1.0'
 gem "font-awesome-rails"
