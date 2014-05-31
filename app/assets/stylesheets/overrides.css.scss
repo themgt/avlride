@@ -2,6 +2,13 @@
 	/*color: white !important;*/
 }
 
+#error_explanation{
+	color: red;
+	h2{
+		font-size: 1em;
+	}
+}
+
 .checkbox-field{
 	display:block;
 	clear:both;
@@ -32,7 +39,7 @@ fieldset{
 	clear:both;
 }
 
-.facebook-link{
+.right-nav{
 	float:right;
 	margin-top: 10px;
 }
