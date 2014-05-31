@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   	root :to => 'devise/registrations#new'
   end
   
-  %w(about help faq).each do |name|
+  %w(about help faq connect).each do |name|
     get "/#{name}",     to: "pages##{name}"
   end
   
