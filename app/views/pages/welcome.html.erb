@@ -70,14 +70,33 @@
 'West Asheville Estates',
 'Wilshire Park'] %>
 
+<%
 
-<div class="header">
-	<div class="container">
+@questions = ['Round Trip Travel Time',
+'Repeat Trips',
+'Have Car?',
+'Passenger or a driver?',
+'Are pets ok?',
+'Do you speed? ',
+'Do you smoke? ',
+'Food and Drink ok? ',
+'Radio or Music?',
+'Number of seats available/needed',
+'Are you on facebook?',
+'User Feedback']
+%>
+
+
+<div class="container">
+	<div class="logo col-md-6 col-md-offset-3">
+		<%= image_tag 'logo.png', alt: 'avlride logo' %>
+	</div>
+	<div class="">
 		<h1>
 			Join AVLRide
 		</h1>
 	</div>
-	<div class="container">
+	<div class="">
 		<form class="form signup-form col-md-6 col-md-offset-3">
 			<p>
 				<label for="first name">First Name</label>
@@ -134,7 +153,7 @@
 				<p>
 					<label for="passenger">Passenger</label>
 					<input type="radio" name="passenger"/>
-				</p>				
+				</p>	 			
 			</div>
 			<div class="radio-group">
 				<span>I am a:</span>
@@ -147,28 +166,19 @@
 					<input type="radio" name="Female"/>
 				</p>				
 			</div>
-			<div class="radio-group">
-				<span>Do you speed?</span>
+			<% for q in @questions %>
+				<div class="radio-group">
+				<span><%= q %></span>
 				<p>
-					<label for="yes-speed">Yes! Like a banshee in the night</label>
-					<input type="radio" name="yes-speed"/>
+					<label for="driver">Yes</label>
+					<input type="radio" name="driver"/>
 				</p>
 				<p>
-					<label for="no-speed">Heck no! I drive like my grammy</label>
-					<input type="radio" name="no-speed"/>
+					<label for="passenger">No</label>
+					<input type="radio" name="passenger"/>
 				</p>				
-			</div>			
-			<div class="radio-group">
-				<span>Do you smoke?</span>
-				<p>
-					<label for="yes-speed">Yes! I love my smokables</label>
-					<input type="radio" name="yes-speed"/>
-				</p>
-				<p>
-					<label for="no-speed">Heck no! Gross</label>
-					<input type="radio" name="no-speed"/>
-				</p>				
-			</div>			
+			</div>
+			<% end %>		
 			<p class="submit-button">
 				<input type="submit" value="next &#8594;" class="btn btn-success btn-lg"/>
 			</p>

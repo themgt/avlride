@@ -16,6 +16,15 @@
 	}	
 }
 
+.logo{
+	text-align: center;
+	img{
+		max-height: 100px !important;
+		margin: auto;
+		width: auto;
+	}
+}
+
 .submit-button{
 	clear:both;
 	display:block;
@@ -37,16 +46,19 @@
 		display:block;
 		clear:both;
 		margin-bottom: 10px;
-		font-weight:bold;
+		font-weight:normal;
+		color: #666;
+		font-size: 12px;
 	}
 	p{
 		display:inline-block;
 		float:left;
-		margin-right: 20px;
+		margin-right: 40px;
 	}
 	label, input{
 		display:inline-block;
 		float:left;
+		text-align: right;
 	}
 	label{
 		margin-right: 10px;
