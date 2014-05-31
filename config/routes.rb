@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
+  resource :account
   resources :reviews, :ride_offers
   resources :neighborhoods do
     resources :rides

@@ -1,0 +1,7 @@
+<%= form_for current_user, url: '/account' do |f| %>
+  <p>
+    <%= f.label :name %>
+  </p>
+  
+  <%= f.submit "Update" %>
+<% end %>
