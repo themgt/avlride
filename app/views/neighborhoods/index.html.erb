@@ -1,3 +1,7 @@
-<% @hoods.each do |hood| %>
-  <li><%= link_to hood.name, hood %></li>
-<% end %>
+<div class="col-md-6 col-md-offset-3">
+	<ul class="neighborhood-list list-group">
+		<% @hoods.each do |hood| %>
+		  <li class="list-group-item"><%= link_to hood.name, hood %></li>
+		<% end %>
+	</ul>
+</div>

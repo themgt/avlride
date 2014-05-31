@@ -26,9 +26,9 @@
         <ul class="nav navbar-nav navbar-left">
             <!-- <li class="active"><a href="#">Home</a></li> -->
             <!-- <li class=""><a href="#">Join Here</a></li> -->
-            <li class=""><a href="#">Connect</a></li>
-            <li class=""><a href="/rides">Ride Offerings</a></li>
-            <li class=""><a href="#">About</a></li>
+            <li class=""><a href="/connect">Connect</a></li>
+            <li class=""><a href="/neighborhoods">Ride Offerings</a></li>
+            <li class=""><a href="/about">About</a></li>
 
           <!-- <li class="active"><a href="#">Link</a></li>
           <li><a href="#">Link</a></li>
@@ -63,15 +63,20 @@
                 <li><%= link_to "Sign out", signout_path, id: "sign_out" %>   </li>
               </ul>
             </li>
+          </ul>
           <% else %>
-            <li>
-              <%= link_to "Sign in", new_session_path(resource_name) %><br />
-
-            <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: "btn btn-large btn-primary facebook-link" %>
-          </li>
+          <div class="sign-in-buttons">
+            <!-- <li> -->
+              <%= link_to "Sign in", new_session_path(resource_name) %>
+              <span>
+                - or -
+              </span>
+             <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: "btn btn-large btn-primary facebook-link" %>
+           </div>
+          <!-- </li> -->
           <% end %> 
 
-        </ul>
+        
         
            
       </div><!-- /.navbar-collapse -->

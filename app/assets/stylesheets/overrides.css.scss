@@ -9,6 +9,31 @@
 	}
 }
 
+.alert{
+	margin-top: 20px;
+}
+
+.neighborhood-list, .rides-list{
+	margin-top: 20px;
+	li{
+		/*margin-top: 10px;*/
+		font-size: 1.4em;
+	}
+}
+
+h1, h2, h3, h4, h5, h6{
+	color: #666 !important;
+}
+
+.form-options{
+	float:left;
+	margin-top: 10px;
+}
+
+.sign-in-buttons{
+	margin-top: 10px;
+}
+
 .checkbox-field{
 	display:block;
 	clear:both;
@@ -19,7 +44,7 @@
 		float:left;
 		clear:none !important;
 		display:inline;
-		margin-top: 0px !important;
+		margin-top: 0px !important; 
 	}
 	input{
 		margin-right: 5px !important;
