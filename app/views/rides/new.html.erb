@@ -7,10 +7,10 @@
       <fieldset>
         <h3>Start</h3>
         <label>Latitude</label>
-        <input name="lat_a" type="hidden" value="" id='lat_a'>
+        <%= f.hidden_field :lat_a, id: 'lat_a' %>
 
         <label>Longitude</label>
-        <input name="lng_a" type="hidden" value=""  id='lng_a'>
+        <%= f.hidden_field :lon_a, id: 'lon_a' %>
 
         <label>Formatted Address</label>
         <input name="formatted_address" type="text" value="" >
@@ -18,8 +18,6 @@
         <%= f.label :has_car %>
         <%= f.check_box :has_car %>
 
-
-        
 <!--         <%= f.submit class: "btn-lg btn-success btn" %>
  -->      </fieldset>
       <fieldset>
@@ -27,11 +25,8 @@
       <input id="find_end" type="button" value="find" class="btn btn-default"/>
 
         <h3>End</h3>
-        <!-- <label>Latitude</label> -->
-        <input name="lat_b" type="hidden" value="" id='lat_b'>
-
-        <!-- <label>Longitude</label> -->
-        <input name="lng_b" type="hidden" value=""  id='lng_b'>
+        <%= f.hidden_field :lat_b, id: 'lat_b' %>
+        <%= f.hidden_field :lon_b, id: 'lon_b' %>
 
         <label>Formatted Address</label>
         <input name="formatted_address_end" type="text" value="" id='formatted_address_end'>
@@ -54,12 +49,12 @@
     });
 
     $("#geocomplete").geocomplete().geocomplete().bind("geocode:result", function(event, result){
-        // console.log(result.formatted_address);
-        // console.log(result.geometry.location.A);
-        // console.log(result.geometry.location.k);
+        console.log(result.formatted_address);
+        console.log(result.geometry.location.A);
+        console.log(result.geometry.location.k);
 
         $("#lat_a").val(result.geometry.location.A);
-        $("#lng_a").val(result.geometry.location.k);
+        $("#lon_a").val(result.geometry.location.k);
         // console.log(result);
     });
 
@@ -73,7 +68,7 @@
         // console.log(result.geometry.location.k);
 
         $("#lat_b").val(result.geometry.location.A);
-        $("#lng_b").val(result.geometry.location.k);
+        $("#lon_b").val(result.geometry.location.k);
         $("#formatted_address_end").val(result.formatted_address);
         // console.log(result.formatted_address);
         // console.log(result);
