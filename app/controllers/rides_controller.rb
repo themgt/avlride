@@ -12,9 +12,8 @@ class RidesController < ApplicationController
   end
   
   def create
-    raise 'woot'
     @ride = current_user.rides.create(permitted_params)
-    redirect_to @ride
+    redirect_to @ride, notice: "Ride Created"
   end
   
   protected
