@@ -1,25 +1,42 @@
 <div id="main_content_wrap" class="container">
-  <section id="main_content" class="inner col-md-6 col-offset-6">
+  <section id="main_content" class="inner col-md-6 col-md-offset-3">
     <%= form_for @ride do |f| %>
-      <input id="geocomplete" type="text" placeholder="Type in an address" value="Empire State Bldg" />
-      <input id="find" type="button" value="find" />
+      <input id="geocomplete" type="text" placeholder="Type in an address" value="" />
+      <input id="find" type="button" value="find" class="btn btn-default"/>
       
       <fieldset>
-        <h3>Address-Details</h3>
-
+        <h3>Start</h3>
         <label>Latitude</label>
-        <input name="lat" type="text" value="">
+        <input name="lat_a" type="hidden" value="" id='lat_a'>
 
         <label>Longitude</label>
-        <input name="lng" type="text" value="">
+        <input name="lng_a" type="hidden" value=""  id='lng_a'>
 
         <label>Formatted Address</label>
-        <input name="formatted_address" type="text" value="">
+        <input name="formatted_address" type="text" value="" >
         
         <%= f.label :has_car %>
         <%= f.check_box :has_car %>
 
-        <%= f.submit %>
+
+        
+<!--         <%= f.submit class: "btn-lg btn-success btn" %>
+ -->      </fieldset>
+      <fieldset>
+            <input id="geocomplete_end" type="text" placeholder="Type in an address" value="" />
+      <input id="find_end" type="button" value="find" class="btn btn-default"/>
+
+        <h3>End</h3>
+        <!-- <label>Latitude</label> -->
+        <input name="lat_b" type="hidden" value="" id='lat_b'>
+
+        <!-- <label>Longitude</label> -->
+        <input name="lng_b" type="hidden" value=""  id='lng_b'>
+
+        <label>Formatted Address</label>
+        <input name="formatted_address_end" type="text" value="" id='formatted_address_end'>
+      
+        <%= f.submit class: "btn-lg btn-success btn" %>
       </fieldset>
     <% end %>
   </section>
@@ -35,5 +52,35 @@
     $("#find").click(function(){
       $("#geocomplete").trigger("geocode");
     });
+
+    $("#geocomplete").geocomplete().geocomplete().bind("geocode:result", function(event, result){
+        // console.log(result.formatted_address);
+        // console.log(result.geometry.location.A);
+        // console.log(result.geometry.location.k);
+
+        $("#lat_a").val(result.geometry.location.A);
+        $("#lng_a").val(result.geometry.location.k);
+        // console.log(result);
+    });
+
+    $("#find_end").click(function(){
+      $("#geocomplete_end").trigger("geocode");
+    });
+
+    $("#geocomplete_end").geocomplete().geocomplete().bind("geocode:result", function(event, result){
+        // console.log(result.formatted_address);
+        // console.log(result.geometry.location.A);
+        // console.log(result.geometry.location.k);
+
+        $("#lat_b").val(result.geometry.location.A);
+        $("#lng_b").val(result.geometry.location.k);
+        $("#formatted_address_end").val(result.formatted_address);
+        // console.log(result.formatted_address);
+        // console.log(result);
+    });
+    
+
+    
+    
   });
 </script>

@@ -2,26 +2,45 @@
 	/*color: white !important;*/
 }
 
+.chosen-container{
+	margin-bottom: 10px;
+	min-height: 25px;
+	input{
+		min-height: 0px !important;
+	}
+}
+
+fieldset{
+	clear:both;
+}
+
 .facebook-link{
 	float:right;
 	margin-top: 10px;
 }
 
-form{
+.container form{
+	h1, h3{
+		margin-top: 20px;
+	}
 	input{
-		min-height: 30px;
 		border-radius: 3px;
 		&[type="text"], &[type="email"]{
 			width: 100%;
+			min-height: 40px;
+			padding: 0px 10px;
 			border: 1px solid #ccc !important;
 		}
 	}
 	label{
+		margin-top: 10px;
 		clear:both;
 		display:block;
+		margin-bottom: 0px;
 	}
 	.btn{
 		float:right !important;
+		margin-top: 10px;
 	}	
 }
 
@@ -64,6 +83,10 @@ form{
 		display:inline-block;
 		float:left;
 		margin-right: 40px;
+		background: #ddd;
+		padding: 5px;
+		border-radius: 5px;
+		/*color: white !important;*/
 	}
 	label, input{
 		display:inline-block;
@@ -72,6 +95,7 @@ form{
 	}
 	label{
 		margin-right: 10px;
+		margin-top: 0px !important;
 	}
 }
 

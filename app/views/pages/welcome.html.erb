@@ -68,7 +68,28 @@
 'WECAN',
 'Walton-Oakland',
 'West Asheville Estates',
-'Wilshire Park'] %>
+'Wilshire Park'] 
+
+@neighborhood_home_list = [
+	'',
+	'Buncombe',
+'- Asheville',
+'-- North AVL',
+'-- S AVL (Arden/Fletcher)',
+'-- East Asheville',
+'-- West Asheville',
+'- Weaverville',
+'- Black Mountain',
+'- Swannanoa',
+'- Leicester',
+'- Enka/Candler',
+'- Barnardsville',
+'Madison',
+'Haywood',
+'Hendersonville',
+'Other'
+]
+%>
 
 <%
 
@@ -88,9 +109,6 @@
 
 
 <div class="container">
-	<div class="logo col-md-6 col-md-offset-3">
-		<%= image_tag 'logo.png', alt: 'avlride logo' %>
-	</div>
 	<div class="col-md-12">
 		<h1>
 			Join AVLRide
@@ -112,22 +130,28 @@
 			</p>
 			<p>
 				<label for="last name">Home Neighborhood</label>
-				<select name='neighborhood_home'>
-					<% for n in @testlist %>
+				<select name='neighborhood_home_home' id='neighborhood_home'>
+					<% for n in @neighborhood_home_list %>
 						<option value='<%= n %>'><%= n %></option>
 					<% end
 					%>
 				</select>
-				<input type="text" name="home location" />
+				<div id='neighborhood_home_other'  style="display: none">
+					<label>Other:</label>
+					<input type="text" name="home location" />
+				</div>
 			</p>
 			<p>
 				<label for="last name">Work Neighborhood</label>
-				<select name='neighborhood_home'>
-					<% for n in @testlist %>
+				<select name='neighborhood_home_work' id='neighborhood_work'>
+					<% for n in @neighborhood_home_list %>
 						<option value='<%= n %>'><%= n %></option>
 					<% end %>
 				</select>
-				<input type="text" name="work location" />
+				<div id='neighborhood_work_other'  style="display: none">
+					<label>Other:</label>
+					<input type="text" name="work location" />
+				</div>
 			</p>
 			<p class="submit-button">
 				<input type="submit" value="sign me up! &#8594;" class="btn btn-success btn-lg"/>
@@ -148,34 +172,34 @@
 				<span>I am a:</span>
 				<p>
 					<label for="driver">Driver</label>
-					<input type="radio" name="driver"/>
+					<input type="radio" name="driver-passenger" value="driver" id="driver"/>
 				</p>
 				<p>
 					<label for="passenger">Passenger</label>
-					<input type="radio" name="passenger"/>
+					<input type="radio" name="driver-passenger" value="passenger" id="passenger" />
 				</p>	 			
 			</div>
 			<div class="radio-group">
 				<span>I am a:</span>
 				<p>
 					<label for="Male">Male</label>
-					<input type="radio" name="Male"/>
+					<input type="radio" name="gender" value="male" id="male"/>
 				</p>
 				<p>
 					<label for="Female">Female</label>
-					<input type="radio" name="Female"/>
+					<input type="radio" name="gender" value="female" id="female"/>
 				</p>				
 			</div>
 			<% for q in @questions %>
 				<div class="radio-group">
 				<span><%= q %></span>
 				<p>
-					<label for="driver">Yes</label>
-					<input type="radio" name="driver"/>
+					<label for="<%= q %>">Yes</label>
+					<input type="radio" name="<%= q %>" id="<%= q %>" value="<%= q %> yes"/>
 				</p>
 				<p>
-					<label for="passenger">No</label>
-					<input type="radio" name="passenger"/>
+					<label for="<%= q %>">No</label>
+					<input type="radio" name="<%= q %>" id="<%= q %>" value="<%= q %> no"/>
 				</p>				
 			</div>
 			<% end %>		
@@ -185,3 +209,28 @@
 		</form>
 	</div>				
 </div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).on('change',"#neighborhood_home", function(){
+			if($(this).val() == "Other"){
+				$("#neighborhood_home_other").slideDown();
+			}
+			else{
+				$("#neighborhood_home_other").slideUp();
+
+			}
+		});
+
+		$(document).on('change',"#neighborhood_work", function(){
+			if($(this).val() == "Other"){
+				$("#neighborhood_work_other").slideDown();
+			}
+			else{
+				$("#neighborhood_work_other").slideUp();
+
+			}
+		});
+
+		
+	});
+</script>
