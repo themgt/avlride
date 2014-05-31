@@ -1,5 +1,5 @@
 <%= @rides.count %> rides
 
 <% @rides.each do |ride| %>
-  <li><%= link_to ride.title, ride %></li>
+  <li><%= link_to ride.title, [ride.hood, ride] %></li>
 <% end %>

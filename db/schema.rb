@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140531185955) do
+ActiveRecord::Schema.define(version: 20140531195606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "neighborhoods", force: true do |t|
+    t.string   "name",       null: false
+    t.string   "slug",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "reviews", force: true do |t|
     t.integer  "user_id",    null: false
@@ -34,7 +41,7 @@ ActiveRecord::Schema.define(version: 20140531185955) do
   end
 
   create_table "rides", force: true do |t|
-    t.integer  "user_id",    null: false
+    t.integer  "user_id",         null: false
     t.float    "lat_a"
     t.float    "lon_a"
     t.float    "lat_b"
@@ -46,6 +53,7 @@ ActiveRecord::Schema.define(version: 20140531185955) do
     t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "neighborhood_id", null: false
   end
 
   create_table "users", force: true do |t|

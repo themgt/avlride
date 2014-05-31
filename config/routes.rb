@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
-  resources :reviews, :rides, :ride_offers
+  resources :reviews, :ride_offers
+  resources :neighborhoods do
+    resources :rides
+  end
   
   devise_scope :user do
   	root :to => 'devise/registrations#new'

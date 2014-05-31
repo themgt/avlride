@@ -18,27 +18,5 @@ class User < ActiveRecord::Base
         user.save!
       end
     end
-    
-    def neighborhoods
-     [
-  '',
-  'Buncombe',
-'- Asheville',
-'-- North AVL',
-'-- S AVL (Arden/Fletcher)',
-'-- East Asheville',
-'-- West Asheville',
-'- Weaverville',
-'- Black Mountain',
-'- Swannanoa',
-'- Leicester',
-'- Enka/Candler',
-'- Barnardsville',
-'Madison',
-'Haywood',
-'Hendersonville',
-'Other'
-]
-    end
   end
 end
