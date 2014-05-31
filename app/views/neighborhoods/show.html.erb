@@ -9,4 +9,33 @@
 		  <li class="list-group-item"><%= link_to ride.title, [ride.hood, ride] %></li>
 		<% end %>
 	</ul>
+	<% if @hood.slug.include? 'avl'  %>
+		<h3>Park and Ride Lots</h3>
+		<p>Asheville Airport: NC 280 at Fanning Bridge Rd (Near WNC Ag. Center)</p>
+      	<%= image_tag 'asheville.png', alt: 'avlride logo' %>
+	<% end %>
+	<% if @hood.slug.include? 'canton'  %>
+
+		<h3>Park and Ride Lots</h3>
+		<p>Canton: I-40 Ex 33 at Newfound Rd (at Laurel Dr)</p>
+      	<%= image_tag 'canton.png', alt: 'avlride logo' %>
+
+	<% end %>
+
+	<% if @hood.slug.include? 'mars'  %>
+
+		<h3>Park and Ride Lots</h3>
+		<p>Mars Hill: I-26 Ex 11 on SR 1605 (Near Mars Hill College)</p>
+      	<%= image_tag 'marshill.png', alt: 'avlride logo' %>
+
+	<% end %>
+	<% if @hood.slug.include? 'weaverville'  %>
+
+		<h3>Park and Ride Lots</h3>
+		<p>Weaverville: I-26 Ex 17 at N. Buncombe School Rd. on Griffee Rd </p>
+      	<%= image_tag 'weaverville.png', alt: 'avlride logo' %>
+
+	<% end %>
+
+
 </div>

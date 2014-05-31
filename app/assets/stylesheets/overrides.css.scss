@@ -2,6 +2,10 @@
 	/*color: white !important;*/
 }
 
+img{
+	max-width: 100%;
+}
+
 .navbar{
 	background-color: #0069BF !important;
 	border: none !important;
@@ -19,6 +23,20 @@
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
 	background-color: #0069BF !important;
 	color: white !important;
+}
+
+.navbar-default .navbar-toggle {
+	background: #eee;
+}
+
+@media screen and (max-width:767px){
+	.navbar-collapse .dropdown-menu > li > a {
+		color: white !important;
+		&:hover{
+			color: #ddd !important;
+			text-decoration: underline;
+		}
+	}
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -120,6 +138,7 @@ fieldset{
 			min-height: 40px;
 			padding: 0px 10px;
 			border: 1px solid #ccc !important;
+			margin-bottom: 5px;
 		}
 	}
 	label{
@@ -132,6 +151,14 @@ fieldset{
 		float:right !important;
 		margin-top: 10px;
 	}	
+}
+
+textarea{
+	width: 100%;
+	min-height: 150px;
+	padding: 0px 10px;
+	border-radius: 3px;
+	border: 1px solid #ccc !important;
 }
 
 .logo{
