@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :reviews
+  has_many :rides
+  has_many :ride_offers
+  
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider

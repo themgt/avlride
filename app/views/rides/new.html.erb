@@ -1,0 +1,39 @@
+<div id="main_content_wrap" class="outer">
+  <section id="main_content" class="inner">
+    <%= form_for @ride do |f| %>
+      <input id="geocomplete" type="text" placeholder="Type in an address" value="Empire State Bldg" />
+      <input id="find" type="button" value="find" />
+      
+      <fieldset>
+        <h3>Address-Details</h3>
+
+        <label>Latitude</label>
+        <input name="lat" type="text" value="">
+
+        <label>Longitude</label>
+        <input name="lng" type="text" value="">
+
+        <label>Formatted Address</label>
+        <input name="formatted_address" type="text" value="">
+        
+        <%= f.label :has_car %>
+        <%= f.check_box :has_car %>
+
+        <%= f.submit %>
+      </fieldset>
+    <% end %>
+  </section>
+</div>
+
+<script>
+  $(function(){
+    $("#geocomplete").geocomplete({
+      details: "form",
+      types: ["geocode", "establishment"]
+    });
+    
+    $("#find").click(function(){
+      $("#geocomplete").trigger("geocode");
+    });
+  });
+</script>
