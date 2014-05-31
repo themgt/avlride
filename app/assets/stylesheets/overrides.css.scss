@@ -127,7 +127,16 @@ fieldset{
 	margin-top: 10px;
 }
 
+.cancel-container{
+	margin-top: 20px;
+	border-top: 1px solid #ccc;
+	padding-top: 10px; 
+	clear:both;
+}
+
 .container form, form.edit_user{
+	overflow:hidden;
+	/*margin-bottom: 20px;*/
 	h1, h3{
 		margin-top: 20px;
 	}

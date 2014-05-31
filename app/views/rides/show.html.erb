@@ -5,5 +5,5 @@
 	<h5>Leaving from: <%= @ride.neighborhood.name %></h5>
 	<h5>Going  to: <%= @ride.neighborhood.name %></h5>
 	<p>		<%= @ride.message %></p>
-
+	<h2><a href='mailto:<%= @ride.user.email %>'>Contact this Member </a></h2>
 </div>
